@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Module 2</title>
+    <style>
+
+        input.ng-valid {
+            background-color: green;
+
+        }
+        input.ng-invalid {
+            background-color: red;
+        }
+    </style>
+</head>
+<body ng-app="moviesApp">
+    <div ng-controller="editMovieCtrl">
+        <form name="frm">
+
+            <div>
+                <label>Title:</label>
+                <input type="text" name="title" ng-model="movie.title" ng-required="true" />
+                <div ng-show="frm.title.$error.required">
+                    please enter a title
+                </div>
+            </div>
+
+            <div>
+                <label>Description:</label>
+                <textarea ng-model="movie.description"></textarea>
+            </div>
+
+            <div>
+                <label>Year:</label>
+                <input type="text" ng-model="movie.year" />
+            </div>
+
+            <div>
+                <label>Rating:</label>
+                <input type="text" ng-model="movie.rating" />
+            </div>
+
+            <div>
+                <label>Director:</label>
+                <select ng-model="movie.directorID"
+                        ng-options="d.id as d.name for d in directors">
+                    
+                </select>
+                <!--<input type="text" ng-model="movie.directorID" />-->
+            </div>
+
+            <div>
+                <button ng-click="save()"
+                        ng-disabled="frm.$invalid">
+                    Save
+                </button>
+            </div>
+        </form>
+    </div>
+    <script src="/bower_components/angular/angular.js"> </script>
+    <script src="/App/App.js"> </script>
+    <script src="App/Directors.js"></script>
+</body>
+</html>
