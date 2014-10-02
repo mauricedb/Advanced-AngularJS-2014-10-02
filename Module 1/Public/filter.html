@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html ng-app="filterApp">
+<head>
+    <title>Module x</title>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <div ng-controller="filterCtrl">
+        <div>
+            {{now | date}}
+        </div>
+        <input type="text" ng-model="searchText" /> <button ng-click="search()">Search</button>
+        <ul>
+            <li ng-repeat="movie in movies | filter:{'title':searchText}">
+                {{movie.title}}
+            </li>
+        </ul>
+
+        <ul>
+            <li ng-repeat="movie in filteredMovies">
+                {{movie.title}}
+            </li>
+        </ul>
+    </div>
+
+    <script src="App/Movies.js"></script>
+    <script src="/bower_components/angular/angular.js"> </script>
+    <script src="/App/filters.js"> </script>
+</body>
+</html>
