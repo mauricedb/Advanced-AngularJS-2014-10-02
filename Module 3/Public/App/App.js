@@ -29,4 +29,23 @@
         };
     });
 
+
+
+    app.directive("compiled", function () {
+        return {
+
+            compile: function (element, attrs) {
+                element.html("<div> i = {{i}}</div>");
+                element.bind("click", function () { alert(); });
+                console.log("compile function", attrs);
+            }
+
+            //link:function(scope, element) {
+            //    element.html("<div> i = " + scope.i +  "</div>");
+            //    element.bind("click", function () { alert(); });
+            //    console.log("link function");
+            //}
+
+        }
+    })
 }());
