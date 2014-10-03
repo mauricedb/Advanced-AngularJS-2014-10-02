@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Module 6</title>
+    <style>
+        
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+<body ng-app="demoApp">
+
+    <div ng-controller="demoCtrl">
+        <input type="text" ng-model="snippet" />
+        <br />
+        <div ng-bind="snippet">ng-bind</div>
+        <div ng-bind-html="snippet">ng-bind-html unsafe</div>
+        <div ng-bind-html="safeSnippet">ng-bind-html safe</div>
+    </div>
+
+
+    <script src="/bower_components/angular/angular.js"> </script>
+    <script src="/bower_components/angular/angular-sanitize.js"> </script>
+    <script src="/App/App.js"> </script>
+</body>
+</html>
