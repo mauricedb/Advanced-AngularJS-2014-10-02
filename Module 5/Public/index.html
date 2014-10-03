@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Movies</title>
+    <link href="/CSS/bootstrap.css" rel="stylesheet" />
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <div class="container">
+        <h1>Movie Manager</h1>
+        <h4 ng-controller="HeaderCtrl" class="ng-cloak">
+            This app was loaded at {{setting.startTime}}
+        </h4>
+
+        <div ng-view></div>
+    </div>
+
+    <script src="/Scripts/lodash.js"></script>
+    <script src="/Scripts/angular.js"></script>
+    <script src="/Scripts/angular-route.js"></script>
+    <script src="/Scripts/angular-resource.js"></script>
+    <script src="/App/App.js"></script>
+    <script src="/App/MoviesList.js"></script>
+    <script src="/App/MovieEditor.js"></script>
+    <script src="/App/Resources.js"></script>
+    <script src="/App/Externals.js"></script>
+</body>
+</html>
